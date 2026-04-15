@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OTR - Terminal</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="contenedor">
+
+<div class="header">
+    <div class="titulo">OTR</div>
+    <div class="sub">Observatorio de Trámites y Reclamos</div>
+</div>
+
+<form id="formulario" action="guardar.php" method="POST" enctype="multipart/form-data">
+
+<div id="mapa"></div>
+
+<input type="hidden" name="latitud" id="latitud">
+<input type="hidden" name="longitud" id="longitud">
+
+<div class="grupo">
+<label>Descripción</label>
+<textarea id="descripcion" name="descripcion"></textarea>
+</div>
+
+<div class="grupo">
+<label>Ubicación</label>
+<input type="text" id="ubicacion" name="ubicacion">
+</div>
+
+<div class="grupo">
+<label>Tipo</label>
+<select id="tipo" name="tipo">
+<option>Seleccionar</option>
+<option>Poste de Luz</option>
+<option>Foco de Luz</option>
+<option>Basura</option>
+<option>Pozo</option>
+<option>Arbol Caido</option>
+</select>
+</select>
+</div>
+
+<div class="grupo">
+<label>Urgencia</label>
+<select id="urgencia" name="urgencia">
+<option value="">Seleccionar</option>
+<option>Urgente</option>
+<option>No urgente</option>
+</select>
+</div>
+
+<div class="grupo">
+<label>Imagen</label>
+<div class="area-imagen" id="areaImagen">
+Click para subir imagen
+<input type="file" id="imagen" name="imagen" hidden>
+</div>
+
+<img id="preview" class="preview">
+
+<button type="button" id="borrarImagen" class="boton" style="display:none;">
+Eliminar imagen
+</button>
+</div>
+
+<button class="boton">Enviar Reclamo</button>
+
+</form>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
